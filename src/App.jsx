@@ -1,14 +1,16 @@
 import "./App.css";
+import { useState } from "react";
 import Test from "./components/test";
 function App() {
-  const data = {
+  const [data, setData] = useState({
     num: 2,
-  };
+  });
+
   const add = () => {
-    data.num += 1;
+    setData((prevData) => ({ num: prevData.num + 1 }));
   };
   const minus = () => {
-    data.num -= 1;
+    setData((prevData) => ({ num: prevData.num - 1 }));
   };
   return (
     <div>
